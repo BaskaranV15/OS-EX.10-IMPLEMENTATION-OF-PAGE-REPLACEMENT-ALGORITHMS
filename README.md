@@ -165,5 +165,67 @@ printf("\nThe no of page faults is %d",c);
 }
 ```
 # OUTPUT
+![11](https://github.com/BaskaranV15/OS-EX.10-IMPLEMENTATION-OF-PAGE-REPLACEMENT-ALGORITHMS/assets/118703522/1e50c2f0-78e1-4d76-b53f-bc9014f36fe6)
 
 
+# RESULT
+Thus the implementation of LRU page replacement is successfully executed.
+
+# OPTIMAL PAGE REPLACEMENT (OPR)
+# AIM
+To write a C program to implement Page Replacement technique using OPR.
+# ALGORITHM
+1.Start the program.
+2.Take the input of pages as an array.
+3.Look for the page allocated is present in near future, if no then replace that page in the memory with new page,
+4.If page already present increment hit, else increment miss.
+5.Repeat till we reach the last element of the array.
+6.Print the number of hits and misses.
+7.Stop the program.
+
+# PROGRAM
+```
+#include<stdio.h>
+int main()
+{
+int i,j,n,a[50],frame[10],no,k,avail,count=0;
+printf("\n ENTER THE NUMBER OF PAGES:\n");
+scanf("%d",&n);
+printf("\n ENTER THE PAGE NUMBER :\n");
+for(i=1;i<=n;i++)
+scanf("%d",&a[i]);
+printf("\n ENTER THE NUMBER OF FRAMES :");
+scanf("%d",&no);
+for(i=0;i<no;i++)
+frame[i]= -1;
+j=0;
+printf("\tref string\t page frames\n");
+for(i=1;i<=n;i++)
+{
+printf("%d\t\t",a[i]);
+avail=0;
+for(k=0;k<no;k++)
+if(frame[k]==a[i])
+avail=1;
+if (avail==0)
+{
+frame[j]=a[i];
+j=(j+1)%no;
+count++;
+for(k=0;k<no;k++)
+printf("%d\t",frame[k]);
+}
+printf("\n");
+}
+printf("Page Fault Is %d",count);
+return 0;
+}
+```
+# OUTPUT
+
+![22](https://github.com/BaskaranV15/OS-EX.10-IMPLEMENTATION-OF-PAGE-REPLACEMENT-ALGORITHMS/assets/118703522/0ca93d8e-fe27-4d1c-b8c2-cd5dce1cc056)
+
+
+# RESULT
+
+Thus the implementation of OPR page replacement is successfully executed.

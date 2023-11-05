@@ -61,6 +61,7 @@ return 0;
 ```
 # OUTPUT:
 
+![Screenshot 2023-11-05 151052](https://github.com/BaskaranV15/OS-EX.10-IMPLEMENTATION-OF-PAGE-REPLACEMENT-ALGORITHMS/assets/118703522/72cddda3-9a49-413b-8ff3-c3105281782d)
 
 
 # RESULT:
